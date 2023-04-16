@@ -1,0 +1,96 @@
+.todolist {
+  height: 100vh;
+  padding-top: 4.5em;
+  background: rgb(210, 210, 210);
+}
+.fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+}
+
+.fill input {
+  padding: 1em;
+  width: 50%;
+  border-radius: 7px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 2px solid gray;
+  border-right: 0;
+  outline: none;
+  font-size: 1em;
+}
+
+.fill input:focus {
+  border: 2px solid rgb(155, 255, 0);
+}
+
+.fill button {
+  background: #fff;
+  font-size: 1em;
+  padding: 1em;
+  font-weight: 600;
+  border: 2px solid gray;
+  border-left: 0;
+  border-radius: 7px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.fill button:hover {
+  background: rgb(200, 200, 200);
+}
+
+.display {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 5em;
+  background: #fff;
+  padding: 2em;
+  border-radius: 15px;
+}
+
+.display ul {
+  width: 100%;
+  list-style: none;
+  font-size: 1.2em;
+}
+
+.display ul li {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2em;
+  margin-bottom: 1em;
+}
+
+.display ul li p{
+  display: flex;
+  align-items: center;
+  grid-column: 1/4;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+.display ul li button{
+  grid-column: 4/5;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 5px;
+  margin: 5px;
+  outline: none;
+  background: red;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+}
+
+.display ul li button:hover{
+  background: rgb(156, 0, 0);
+}

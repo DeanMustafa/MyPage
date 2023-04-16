@@ -1,0 +1,139 @@
+.navbar {
+  position: fixed;
+  z-index: 999;
+  display: grid;
+  width: 100%;
+  height: 4em;
+  background: #333;
+  grid-template-columns: 0.5fr auto minmax(20em, 1fr) 0.5fr;
+}
+
+.navbar h1 {
+  grid-column: 2 / 3;
+  display: flex;
+  align-items: center;
+}
+
+.navbar h1 > .logo {
+  cursor: pointer;
+  color: rgb(155, 255, 0);
+  text-decoration: none;
+}
+
+.navbar h1 > .logo:hover {
+  color: rgb(220, 255, 170);
+}
+
+.nav-toggle,
+label {
+  display: none;
+}
+
+.links {
+  grid-column: 3 / 4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.links ul {
+  display: flex;
+  gap: 2em;
+  text-decoration: none;
+  list-style: none;
+}
+
+.links ul li > * {
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
+}
+
+.links ul li > *:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar h1 {
+    grid-column: 1/5;
+    display: flex;
+    justify-content: center;
+  }
+
+  label {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 1.8em;
+    margin-left: 1em;
+    z-index: 1000;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  label,
+  label::before,
+  label::after {
+    display: block;
+    background: #fff;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    transition: 250ms;
+  }
+
+  label::before,
+  label::after {
+    content: "";
+    position: absolute;
+  }
+
+  label::before {
+    bottom: 7px;
+  }
+
+  label::after {
+    top: 7px;
+  }
+
+  .navbar input:checked ~ .links {
+    display: block;
+  }
+
+  .navbar input:checked ~ label {    
+    transform: rotate(45deg);
+  }
+
+  .navbar input:checked ~ label::before {
+    bottom: 0px;
+  }
+
+  .navbar input:checked ~ label::after {
+    top: 0px;
+    transform: rotate(90deg);
+  }
+
+  .links {
+    all: unset;
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 4em;
+    left: 0;
+  }
+
+  .links ul {
+    padding: 1em 0;
+    background: #333333de;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+}
