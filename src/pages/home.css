@@ -1,3 +1,19 @@
 .home {
   padding-top: 4.5em;
+  background-image: url(../img/home-back.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home h1 {
+  font-size: 5em;
+  color: rgb(60, 122, 102);
+  background-color: rgba(255, 217, 171, 0.7);
+  padding: 50px;
+  border-radius: 30px;
 }

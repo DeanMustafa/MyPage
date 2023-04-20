@@ -7,12 +7,16 @@ export const TodoList = () => {
   const [input, setInput] = useState("");
 
   const addTask = (todo) => {
-    const newTask = {
-      id: Math.random(),
-      todo: todo,
-    };
-    setList([...list, newTask]);
-    setInput("");
+    if (input !== "") {
+      const newTask = {
+        id: Math.random(),
+        todo: todo,
+      };
+      setList([...list, newTask]);
+      setInput("");
+    } else {
+      return;
+    }
   };
 
   const deleteTask = (id) => {
@@ -31,22 +35,22 @@ export const TodoList = () => {
         />
         <button onClick={() => addTask(input)}>Add</button>
       </div>
-      <div className="display">
+      <div className="display-todo">
         <ul>
-          {list.map((todo) => (
-            <li key={todo.id}>
-              <p>
-                {todo ? <h1>{todo.todo}</h1> : <h1>No Taks</h1>}
-              </p>
-              <button onClick={() => deleteTask(todo.id)}>X</button>
-            </li>
-          ))}
+          {list.length > 0 ? (
+            list.map((todo) => (
+              <li key={todo.id}>
+                <p>{todo.todo}</p>
+                <button onClick={() => deleteTask(todo.id)}>X</button>
+              </li>
+            ))
+          ) : (
+            <h1>No Task!</h1>
+          )}
         </ul>
       </div>
     </div>
   );
 };
 
-// ! Empty add task error
-// ? Edit button
-// * Empty task bar message
+// * Enter key

@@ -1,3 +1,184 @@
 .weather {
   padding-top: 4.5em;
+  background-image: url(../../img/weather-back.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.weather * {
+  transition: all 0.5s;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container input {
+  width: 40%;
+  padding: 1em;
+  border-radius: 2em;
+  margin: 4em auto 5em;
+  outline: none;
+  border: 2px solid #4c5357;
+  transition: all 0.3s;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff;
+  background: transparent;
+}
+
+.container input:hover {
+  border: 2px solid #13b1fa;
+  color: #13b1fa;
+  transition: all 0.3s;
+}
+
+.container input:active {
+  transition: 0.1s;
+  border: 2px solid #d0fa13;
+  color: #d0fa13;
+}
+
+.container input::placeholder {
+  color: #a0a5a8;
+  transition: all 0.3s;
+}
+
+.container input:hover::-webkit-input-placeholder {
+  color: #13b1fa;
+  transition: all 0.3s;
+}
+
+.enter-loc{
+  background: rgba(255, 255, 255, 0.5);
+  padding: 30px;
+  font-size: 3em;
+  border-radius: 15px;
+  color: #146f99;
+}
+
+.upper-part {
+  width: 100%;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.upper-part .name {
+  color: #fff;
+  font-size: 8em;
+  font-weight: bolder;
+}
+
+.upper-part .current {
+  font-size: 9em;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.mid {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 7em;
+  color: #fff;
+  font-weight: bold;
+}
+
+.down-part {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.8em;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 3em;
+  text-align: center;
+  margin-top: 4em;
+}
+
+.down-part > * {
+  padding: 0.6em 0.5em;
+}
+
+.down-part p {
+  color: #fff;
+}
+
+.down-part .highlight {
+  color: #3393c0cc;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1024px) {
+  .weather * {
+    transition: all 0.5s;
+  }
+
+  .container input {
+    width: 50%;
+  }
+
+  .upper-part {
+    margin-top: 4em;
+    margin-bottom: 5em;
+  }
+
+  .upper-part .name {
+    font-size: 6em;
+  }
+
+  .upper-part .current {
+    font-size: 6em;
+  }
+
+  .mid {
+    font-size: 5em;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .down-part {
+    width: 50%;
+    font-size: 1.4em;
+    margin-top: 4em;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .weather * {
+    transition: all 0.5s;
+  }
+
+  .container input {
+    width: 65%;
+  }
+
+  .upper-part {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .upper-part .name {
+    font-size: 3em;
+  }
+
+  .upper-part .current {
+    font-size: 3.5em;
+  }
+
+  .mid {
+    font-size: 3em;
+  }
+
+  .down-part {
+    width: 80%;
+    font-size: 1.3em;
+    position: absolute;
+    bottom: 3em;
+  }
 }

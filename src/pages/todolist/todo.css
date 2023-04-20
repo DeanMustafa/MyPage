@@ -1,13 +1,18 @@
 .todolist {
   height: 100vh;
-  padding-top: 4.5em;
-  background: rgb(210, 210, 210);
+  padding-top: 8em;
+
+  background-image: url(../../img/todo-back.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .fill {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5em;
+  padding-bottom: 5em;
 }
 
 .fill input {
@@ -16,60 +21,70 @@
   border-radius: 7px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  border: 2px solid gray;
   border-right: 0;
-  outline: none;
+  border: 2px solid transparent;
+  outline: 2px solid rgb(80, 80, 80);
+  background-color: rgba(255, 255, 255, 0.7);
   font-size: 1em;
+  color: black;
 }
 
 .fill input:focus {
   border: 2px solid rgb(155, 255, 0);
 }
 
+.fill input::placeholder {
+  color: #333;
+  font-weight: 600;
+}
+
 .fill button {
-  background: #fff;
+  background: #c2c1c1;
   font-size: 1em;
   padding: 1em;
   font-weight: 600;
-  border: 2px solid gray;
+  border: 2px solid transparent;
   border-left: 0;
   border-radius: 7px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  outline: none;
+  outline: 2px solid rgb(80, 80, 80);
   cursor: pointer;
   text-transform: uppercase;
 }
 
 .fill button:hover {
-  background: rgb(200, 200, 200);
+  background: rgb(255, 255, 255);
 }
 
-.display {
+.display-todo {
   width: 80%;
+  max-height: 450px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
   margin-top: 5em;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.8);
   padding: 2em;
   border-radius: 15px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-.display ul {
+.display-todo ul {
   width: 100%;
   list-style: none;
   font-size: 1.2em;
 }
 
-.display ul li {
+.display-todo ul li {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 2em;
   margin-bottom: 1em;
 }
 
-.display ul li p{
+.display-todo ul li p {
   display: flex;
   align-items: center;
   grid-column: 1/4;
@@ -77,7 +92,7 @@
   padding-bottom: 5px;
 }
 
-.display ul li button{
+.display-todo ul li button {
   grid-column: 4/5;
   width: 2.5em;
   height: 2.5em;
@@ -91,6 +106,10 @@
   cursor: pointer;
 }
 
-.display ul li button:hover{
+.display-todo ul li button:hover {
   background: rgb(156, 0, 0);
+}
+
+.display-todo ul h1 {
+  text-align: center;
 }
